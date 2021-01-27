@@ -4,10 +4,10 @@
   "description": "Linux Metadata Support For Stremio",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node ./src/server.js"
   },
   "author": "",
-  "type": "module",
   "license": "MIT",
   "dependencies": {
     "mpris-service": "^2.1.0",

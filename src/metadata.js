@@ -1,7 +1,8 @@
 // import bent from 'bent'
-import fetch from 'node-fetch'
+// import fetch from 'node-fetch'
+const fetch = require('node-fetch')
 
-export default async function fetch_metadata(m, imdb_id) {
+async function fetch_metadata(m, imdb_id) {
  
   console.dir(m)
 
@@ -21,3 +22,5 @@ export default async function fetch_metadata(m, imdb_id) {
     }
   }
 }
+
+module.exports=fetch_metadata

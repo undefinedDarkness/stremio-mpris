@@ -1,7 +1,7 @@
 // Taken From https://github.com/sleeyax/stremio-discord
 
 // Translates a IMDB runtime string to a Date().
-export function parseMovieRuntime(runtimeString) {
+function parseMovieRuntime(runtimeString) {
     runtimeString = runtimeString.split(' ').join('')
     let time = 0;
     let current = '';
@@ -27,6 +27,8 @@ export function parseMovieRuntime(runtimeString) {
 
     return addSeconds(new Date(), time);
 }
+
+module.exports = parseMovieRuntime
 
 function addSeconds(date, seconds) {
     date.setSeconds(date.getSeconds() + seconds);

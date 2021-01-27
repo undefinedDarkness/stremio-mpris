@@ -1,8 +1,8 @@
-import { addonBuilder } from "stremio-addon-sdk"
-import Player from 'mpris-service'
+const { addonBuilder } = require("stremio-addon-sdk")
+const Player = require('mpris-service')
 
-import { parseMovieRuntime } from './movie-duration.js'
-import fetch_metadata from './metadata.js'
+const fetch_metadata = require('./metadata.js')
+//import fetch_metadata from './metadata.js'
 
 /* Addon Manifest */
 const manifest = {
@@ -52,4 +52,5 @@ addon.defineSubtitlesHandler(async d => {
   return Promise.resolve({ subtitles: [] });
 })
 
-export default addon.getInterface()
+module.exports = addon.getInterface()
+// export default addon.getInterface()
