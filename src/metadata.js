@@ -13,7 +13,7 @@ export default async function fetch_metadata(m, imdb_id) {
     // let req = bent('json');
     const req = await fetch(`https://v3-cinemeta.strem.io/meta/${m.type}/${imdb_id}.json`)
     const d = await req.json();
-    console.dir(d)
+    // console.dir(d)
     if (d.meta) {
       return d.meta
     } else {

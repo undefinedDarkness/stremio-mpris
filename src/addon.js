@@ -32,14 +32,15 @@ addon.defineSubtitlesHandler(async d => {
   const metadata = await fetch_metadata(d, id);
   // const length = parseMovieRuntime(metadata.runtime).getMilliseconds() * 1000 
 
-  // Update plyaer
+  // Update plyaer --- NEVER USE NUMBERS!!!
   let x = {
-    // 'mpris:trackid': id,
-    // 'mpris:length': length,
     'mpris:artUrl': metadata.background || metadata.poster || metadata.logo || "",
     'xesam:title': metadata.name,
-    // 'xesam:contentCreated': metadata.year,
-    // 'xesam:userRating': parseFloat(metadata.imdbRating) / 10 || 0
+    'xesam:comment': [id],
+    'xesam:genre': metadata.genre,
+    'xesam:artist': metadata.cast,
+    // Divide by 10, then trim decimal spaces then parse again
+    // 'xesam:userRating': parseFloat((parseFloat(metadata.imdbRating) / 10).toFixed(1)) 
   }
   console.dir(x)
   player.metadata = x
